@@ -11,7 +11,7 @@ class Manager {
   }
   
   addImageToLoad(src, callback){
-    const request = {src, callback} 
+    const request = {src, callback}
     this.queue.push(request)
   }
   
@@ -49,11 +49,12 @@ class Manager {
   cancelLoadingImage(src){
 
     if(this.getRequestBySrc(src, this.processingImages).length > 0){
-
-      this.getRequestBySrc(src, this.processingImages)[0].img.onload = () => {}
-      this.getRequestBySrc(src, this.processingImages)[0].img.onerror = () => {}
-      this.getRequestBySrc(src, this.processingImages)[0].img.src = "about:"
-      this.getRequestBySrc(src, this.processingImages)[0].img = null
+      if(this.getRequestBySrc(src, this.processedImages).length = 0){
+        this.getRequestBySrc(src, this.processingImages)[0].img.onload = () => {}
+        this.getRequestBySrc(src, this.processingImages)[0].img.onerror = () => {}
+        this.getRequestBySrc(src, this.processingImages)[0].img.src = "about:"
+        this.getRequestBySrc(src, this.processingImages)[0].img = null
+      }
       this.processingImages = this.processingImages.filter(x => x.src !== src)
     }
 

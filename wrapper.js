@@ -3,7 +3,6 @@ import React from 'react'
 //TO do
 // 1. sorting function
 // 2. options
-// 3. pass object to state insteead of src
 
 export const imagesQueue = (images, options) => BaseComponent => {
   
@@ -12,13 +11,13 @@ export const imagesQueue = (images, options) => BaseComponent => {
 
     class ImageManager extends React.Component {
       state = {
-        loadedImages: []
+        processedImages: []
       }
 
       queue = new Manager(5)
 
       componentDidMount(){
-        imagesToPreload.map(image => this.queue.addImageToLoad(image, ()=>this.setState({loadedImages: [...this.state.loadedImages, image]})))
+        imagesToPreload.map(image => this.queue.addImageToLoad(image, (request)=>this.setState({processedImages: [...this.state.processedImages, request]})))
         this.queue.start()
       }
 
@@ -30,7 +29,7 @@ export const imagesQueue = (images, options) => BaseComponent => {
           return (
             <BaseComponent
               {...props}
-              loadedSlides={this.state.loadedImages}
+              processedImages={this.state.processedImages}
               prioritize={this.queue.reorder.bind(this.queue)}
             />
           )

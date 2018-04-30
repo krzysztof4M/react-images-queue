@@ -26,14 +26,14 @@ class Manager {
   loadImage(request){
     request.img = new Image()
     request.img.onload = () => {
-      request.callback(undefined, request.img)
+      request.callback({...request, status: 'success', time: Date.now()})
       this.processedImages.push({...request, status: 'success', time: Date.now()})
       this.cancelLoadingImage(request.src)
       this.start()
       }
 
     request.img.onerror = (error)=> {
-      request.callback(error, request.img)
+      request.callback({...request, status: 'error', time: Date.now()})
       this.processedImages.push({...request, status: 'error', time: Date.now()})
       this.cancelLoadingImage(request.src)
       this.start()

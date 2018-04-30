@@ -1,5 +1,10 @@
 import React from 'react'
 
+//TO do
+// 1. sorting function
+// 2. options
+// 3. pass object to state insteead of src
+
 export const imagesQueue = (images, options) => BaseComponent => {
   
   const Queue = props => {

@@ -64,8 +64,12 @@ export class Manager {
   }
   
   reorder(images){
-    const srcs = (images instanceof Array) ? images : [images]
-    const newArray = this.queue.filter(x => srcs.indexOf(x.src) > -1)
-    this.queue = [...new Set([...newArray, ...this.queue])]
+    if (typeof images === 'function') {
+      this.queue = images(this.queue)
+    } else {
+      const srcs = (images instanceof Array) ? images : [images]
+      const newArray = this.queue.filter(x => srcs.indexOf(x.src) > -1)
+      this.queue = [...new Set([...newArray, ...this.queue])]
+    }
   }
 }

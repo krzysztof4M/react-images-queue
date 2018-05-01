@@ -16,7 +16,7 @@ export const imagesQueue = (images, options) => BaseComponent => {
         super(props)
         this.state = {processedImages: []}
         
-        this.queue = new Manager(5)
+        this.queue = new Manager(options.size)
       }
 
       componentDidMount(){

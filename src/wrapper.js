@@ -1,4 +1,5 @@
 import React from 'react'
+import { Manager } from './manager'
 
 //TO do
 // 1. sorting function
@@ -10,11 +11,13 @@ export const imagesQueue = (images, options) => BaseComponent => {
     const imagesToPreload = typeof images === "function" ? images(props) : images
 
     class ImageManager extends React.Component {
-      state = {
-        processedImages: []
-      }
 
-      queue = new Manager(5)
+      constructor(props) {
+        super(props)
+        this.state = {processedImages: []}
+        
+        this.queue = new Manager(5)
+      }
 
       componentDidMount(){
         imagesToPreload.map(image => this.queue.addImageToLoad(image, (request)=>this.setState({processedImages: [...this.state.processedImages, request]})))

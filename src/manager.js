@@ -1,4 +1,4 @@
-class Manager {
+export class Manager {
   constructor(parralelRequests){
     this.processedImages = []
     this.queue = []

@@ -1,0 +1,22 @@
+{
+  "name": "react-images-queue",
+  "version": "0.0.1",
+  "description": "Images loading manager for React ",
+  "main": "manager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krzysztof4M/react-images-queue.git"
+  },
+  "author": "krzysztof4M <krzysztof.gardocki@gmail.com> (https://github.com/krzysztof4M)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krzysztof4M/react-images-queue/issues"
+  },
+  "homepage": "https://github.com/krzysztof4M/react-images-queue#readme",
+  "dependencies": {
+    "react": "^16.3.2"
+  }
+}

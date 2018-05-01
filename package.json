@@ -2,7 +2,7 @@
   "name": "react-images-queue",
   "version": "0.0.3",
   "description": "Images loading manager for React ",
-  "main": "src/wrapper.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",

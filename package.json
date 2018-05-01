@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "prepublish": "rm -rf ./dist && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/krzysztof4M/react-images-queue.git"
   },
+  "files": ["src", "dist", "README.md", "src/", "dist/"],
   "author": "krzysztof4M <krzysztof.gardocki@gmail.com> (https://github.com/krzysztof4M)",
   "license": "MIT",
   "bugs": {

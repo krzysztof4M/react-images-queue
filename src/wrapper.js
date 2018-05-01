@@ -3,7 +3,6 @@ import { Manager } from './manager'
 
 //TO do
 // 1. sorting function
-// 2. options
 
 export const imagesQueue = (images, options) => BaseComponent => {
   

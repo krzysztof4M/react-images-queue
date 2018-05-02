@@ -1,6 +1,6 @@
 {
   "name": "react-images-queue",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Images loading manager for React ",
   "main": "dist/index.js",
   "scripts": {
